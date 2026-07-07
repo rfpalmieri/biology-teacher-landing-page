@@ -181,6 +181,23 @@
   draw();
 })();
 
+// REVEAL
+
+const elementos = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => { //fica monitorando se um elemento entrou ou saiu da área visível da tela
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visivel');
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+elementos.forEach(el => observer.observe(el));
+
+// MENU
 
 const menuIcon = document.querySelector("#menu-icon");
 const nav = document.querySelector("#nav-container");
