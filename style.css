@@ -544,7 +544,7 @@ p{
 }
 
 .depoimento-card p{
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem !important;
 }
 
 .stars{
