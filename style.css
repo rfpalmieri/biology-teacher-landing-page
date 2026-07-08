@@ -521,7 +521,7 @@ p{
 
 .depoimento-card{
 
-    min-height: 280px; /* ajuste esse valor conforme o teste */
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
