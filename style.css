@@ -83,8 +83,9 @@ p{
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-#logo-container h2{
+#logo-container h2 a{
     color: #2D7A4F;
+    text-decoration: none;
 }
 
 #logo-container span{
