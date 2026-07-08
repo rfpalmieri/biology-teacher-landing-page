@@ -922,7 +922,7 @@ p{
         grid-row: 1 / 6;
         display: flex;
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: center;
         height: 100%;
         filter: drop-shadow(-8px 0px 20px rgba(45, 122, 79, 0.25));
     }
