@@ -181,6 +181,43 @@
   draw();
 })();
 
+
+// COUNTER
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+        const target = +counter.dataset.target;
+        const duration = 800; //tempo
+        const increment = target / (duration / 16);
+        const prefix = counter.dataset.prefix || "";
+
+        let current = 0;
+
+        const updateCounter = () => {
+            current += increment;
+
+            if (current < target) {
+                counter.textContent = prefix + Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = prefix + target;
+            }
+        };
+
+        updateCounter();
+
+        // Impede que a animação aconteça novamente
+        counterObserver.unobserve(counter);
+    });
+});
+
+counters.forEach(counter => counterObserver.observe(counter));
+
 // REVEAL
 
 const elementos = document.querySelectorAll('.reveal');
